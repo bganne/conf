@@ -1,0 +1,33 @@
+[user]
+	email = benoit.ganne@gmail.com
+	name = Benoît Ganne
+
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff --submodule=log -w
+	dfs = diff --submodule=log -w --stat
+	dfc = diff --submodule=log -w --cached
+	dfcs = diff --submodule=log -w --cached --stat
+	lg = log --stat
+	rb = rebase
+	foreach = submodule foreach --recursive
+	distupdate = submodule update --recursive --init
+	distclean = !sh -c 'git clean -dfx && git foreach "git clean -dfx"'
+	distreset = !sh -c 'git reset --hard && git foreach "git reset --hard"'
+	distcommit = !$HOME/src/git-scripts/git-dist-commit
+	distpush = !$HOME/src/git-scripts/git-dist-push
+	forceupdate = !sh -c 'git distclean && git distreset && git distupdate && git distclean'
+
+[merge]
+	tool = vimdiff
+
+[core]
+	excludesfile = ~/.gitignore
+[push]
+	default = simple

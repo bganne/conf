@@ -1,0 +1,4 @@
+.*~
+*.o
+tags
+Makefile.in

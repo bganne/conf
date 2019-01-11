@@ -24,13 +24,17 @@ let c_space_errors=1
 au BufNewFile,BufRead *.t2t set ft=txt2tags
 au BufNewFile,BufRead *.cl set ft=c
 au BufNewFile,BufRead *.hcl set ft=c
-au BufNewFile,BufRead */odp/* :call Linuxsty()
-au BufNewFile,BufRead */linux*/* :call Linuxsty()
+"au BufNewFile,BufRead */odp/* :call Linuxsty()
+"au BufNewFile,BufRead */linux*/* :call Linuxsty()
 let VCSCommandGitDiffOpt="-w"
 set diffexpr=MyDiff()
 function MyDiff()
 	silent execute "!diff -a --binary -w " . v:fname_in . " " . v:fname_new ." > " . v:fname_out
 endfunction
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 highlight! link DiffText Todo
 

@@ -15,11 +15,13 @@ runtime ftplugin/man.vim
 
 filetype plugin indent on
 :syntax enable
-set cindent shiftwidth=4
+"set cindent shiftwidth=4
 "set foldmethod=indent
 "set foldlevel=4
 set noexpandtab
-set ts=4
+set shiftwidth=4
+set tabstop=4
+set showmatch
 let c_space_errors=1
 au BufNewFile,BufRead *.t2t set ft=txt2tags
 au BufNewFile,BufRead *.cl set ft=c
@@ -56,6 +58,7 @@ if has("autocmd")
 endif
 
 highlight! link DiffText Todo
+
 
 "set path=.,./**,,**,/usr/include,/usr/local/include,/usr/include/**,/usr/local/include/**
 set tags=./tags;~,./TAGS;~,tags;~,TAGS;~

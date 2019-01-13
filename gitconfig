@@ -10,11 +10,11 @@
 	ci = commit
 	br = branch
 	co = checkout
-	df = diff --submodule=log -w
-	dfs = diff --submodule=log -w --stat
-	dfc = diff --submodule=log -w --cached
-	dfcs = diff --submodule=log -w --cached --stat
-	lg = log --stat
+	df = diff --submodule=log --patch-with-stat --minimal -M -b
+	dfs = diff --submodule=log --stat --minimal -M -b
+	dfc = diff --submodule=log --cached --minimal -M -b
+	dfcs = diff --submodule=log --cached --stat --minimal -M -b
+	lg = log --stat --minimal -M -b
 	rb = rebase
 	foreach = submodule foreach --recursive
 	distupdate = submodule update --recursive --init
@@ -29,5 +29,6 @@
 
 [core]
 	excludesfile = ~/.gitignore
+
 [push]
 	default = simple

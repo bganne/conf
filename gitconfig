@@ -10,10 +10,10 @@
 	ci = commit
 	br = branch
 	co = checkout
-	df = diff --submodule=log --patch-with-stat --minimal -M -b
-	dfs = diff --submodule=log --stat --minimal -M -b
-	dfc = diff --submodule=log --cached --minimal -M -b
-	dfcs = diff --submodule=log --cached --stat --minimal -M -b
+	df = diff --submodule=log --patch-with-stat --minimal -M
+	dfs = diff --submodule=log --stat --minimal -M
+	dfc = diff --submodule=log --cached --patch-with-stat --minimal -M
+	dfcs = diff --submodule=log --cached --stat --minimal -M
 	lg = log --stat --minimal -M -b
 	rb = rebase
 	foreach = submodule foreach --recursive

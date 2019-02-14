@@ -9,6 +9,8 @@ set cursorline
 set showmatch
 set undofile
 
+noremap % v%
+
 let mapleader = ","
 
 runtime ftplugin/man.vim
@@ -21,7 +23,6 @@ filetype plugin indent on
 set expandtab
 set shiftwidth=4
 set tabstop=4
-set showmatch
 let c_space_errors=1
 au BufNewFile,BufRead *.t2t set ft=txt2tags
 au BufNewFile,BufRead *.cl set ft=c

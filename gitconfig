@@ -10,6 +10,7 @@
 	ci = commit
 	br = branch
 	co = checkout
+	fu = commit -a --amend --no-edit
 	df = diff --submodule=log --patch-with-stat --minimal -M
 	dfs = diff --submodule=log --stat --minimal -M
 	dfc = diff --submodule=log --cached --patch-with-stat --minimal -M
